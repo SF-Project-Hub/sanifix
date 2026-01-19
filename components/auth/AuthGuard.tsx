@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
+import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 
 export function AuthGuard() {
   const pathname = usePathname();
@@ -19,7 +20,7 @@ export function AuthGuard() {
       }
     };
     check();
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
       if (!session && !pathname?.startsWith('/login')) {
         router.replace('/login');
       }

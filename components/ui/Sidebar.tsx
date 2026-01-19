@@ -4,8 +4,9 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import { supabase, isSupabaseConfigured } from '@/lib/supabaseClient';
 import { useState } from 'react';
+import type { Route } from 'next';
 
-const nav: Array<{ href: string; label: string; locked?: boolean }> = [
+const nav: Array<{ href: Route; label: string; locked?: boolean }> = [
   { href: '/', label: 'Dashboard' },
   { href: '/kostenvoranschlaege/new', label: 'KVA-Prozess starten' },
   { href: '/kostenvoranschlaege', label: 'Kostenvoranschläge' },

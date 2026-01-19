@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Route } from 'next';
 
 export function PageHeader({
   title,
@@ -7,7 +8,7 @@ export function PageHeader({
 }: {
   title: string;
   subtitle?: string;
-  cta?: { href: string; label: string };
+  cta?: { href: Route; label: string };
 }) {
   return (
     <div className="flex items-center justify-between">
