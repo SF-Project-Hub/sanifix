@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar: #130D28;
+  --background: #F7F7FB;
+  --primary: #6C5DD3;
+}
+
+html, body {
+  height: 100%;
+  background: var(--background);
+}
+
+* {
+  outline-color: var(--primary);
+}
+
+.focus-ring:focus-visible {
+  box-shadow: theme('boxShadow.focus');
+}
+
+
+
+
+
